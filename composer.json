@@ -1,7 +1,8 @@
 {
     "name": "bear/dbal-module",
     "keywords": [
-        "BEAR.Sunday-Module"
+        "BEAR.Sunday module",
+        "dbal"
     ],
     "description": "doctrine/dbal module for BEAR.Sunday",
     "license": "BSD-3-Clause",
