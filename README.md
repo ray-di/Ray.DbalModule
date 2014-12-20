@@ -1,12 +1,12 @@
 # bear/dbal-module
 
-Doctrine Dbal Module for BEAR.Sunday
+[Doctrine Dbal](https://github.com/doctrine/dbal) Module for BEAR.Sunday
 
 ## Installation
 
-### composer install
+### Composer install
 
-    composer require bear/dbal-module
+    $ composer require bear/dbal-module
  
 ### Module install
 
