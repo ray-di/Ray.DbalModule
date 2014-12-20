@@ -11,29 +11,24 @@ Doctrine Dbal Module for BEAR.Sunday
 ### Module install
 
 ```php
-use path/to/SkeletonModule;
+use BEAR\DbalModule\DbalModule;
 
 class AppModule extends AbstractModule
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function configure()
     {
-        $this->install(new {SkeletonModule});
+        $this->install(new DbalModule);
     }
 }
 
 ```
-### Inject
+### DI trait
 
- * DbalInject for `Doctrine\DBAL\Driver\Connection` interface
+ * [DbalInject](https://github.com/BEARSunday/BEAR.DbalModule/blob/master/src/DbalInject.php) for `Doctrine\DBAL\Driver\Connection` interface
  
 ### Env
 
- * no
- 
-### Demo
+    $_ENV['DBAL_CONFIG'] = 'driver=pdo_sqlite&memory=true'; // dbal config with QUERY_STRING formart 
+    // @see http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
 
- * n/a
  
