@@ -1,0 +1,24 @@
+{
+    "name": "bear/dbal-module",
+    "keywords": [
+        "BEAR.Sunday-Module"
+    ],
+    "description": "doctrine/dbal module for BEAR.Sunday",
+    "license": "BSD-3-Clause",
+    "require": {
+        "ray/di": "~2.0@dev",
+        "doctrine/dbal": "~2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BEAR\\DbalModule\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.0.x-dev"
+        }
+    }
+}
