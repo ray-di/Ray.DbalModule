@@ -1,11 +1,12 @@
 <?php
 /**
- * This file is part of the BEAR.DbalModule package
+ * This file is part of the Ray.DbalModule package
  *
  * @license http://opensource.org/licenses/bsd-license.php BSD
  */
-namespace BEAR\DbalModule;
+namespace Ray\DbalModule;
 
+use Ray\Di\Di\Named;
 use Ray\Di\ProviderInterface;
 use Doctrine\DBAL\DriverManager;
 
@@ -17,13 +18,15 @@ class DbalProvider implements ProviderInterface
     private $config;
 
     /**
-     * @SuppressWarnings(PHPMD)
+     * @param array $config
+     *
+     * @Named("dbal_config")
      */
-    public function __construct()
+    public function __construct($config)
     {
-        $config = [];
-        parse_str($_ENV['DBAL_CONFIG'], $config);
-        $this->config = $config;
+        $parsedConfig = [];
+        parse_str($config, $parsedConfig);
+        $this->config = $parsedConfig;
     }
 
     /**

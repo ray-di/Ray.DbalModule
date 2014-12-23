@@ -2,22 +2,21 @@
 
 require dirname(dirname(__DIR__)) . '/vendor/autoload.php';
 
-use BEAR\DbalModule\DbalInject;
-use BEAR\DbalModule\DbalModule;
+use Ray\DbalModule\DbalInject;
+use Ray\DbalModule\DbalModule;
 use Ray\Di\Injector;
 
 class Fake
 {
     use DbalInject;
 
-    public function getDb()
+    public function foo()
     {
         return $this->db;
     }
 }
 
-$_ENV['DBAL_CONFIG'] = 'driver=pdo_sqlite&memory=true';
-$fake = (new Injector(new DbalModule))->getInstance(Fake::class);
+$fake = (new Injector(new DbalModule('driver=pdo_sqlite&memory=true')))->getInstance(Fake::class);
 $works = ($fake->getDb() instanceof \Doctrine\DBAL\Driver\Connection);
 
 echo ($works ? 'It works!' : 'It DOES NOT work!') . PHP_EOL;
