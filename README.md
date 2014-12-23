@@ -1,12 +1,12 @@
-# bear/dbal-module
+# ray/dbal-module
 
-[Doctrine Dbal](https://github.com/doctrine/dbal) odule for BEAR.Sunday
+[Doctrine Dbal](https://github.com/doctrine/dbal) module for [Ray.Di](https://github.com/koriym/Ray.Di)
 
 ## Installation
 
 ### Composer install
 
-    $ composer require aura/dbal-module
+    $ composer require ray/dbal-module
  
 ### Module install
 

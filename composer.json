@@ -1,10 +1,10 @@
 {
-    "name": "bear/dbal-module",
+    "name": "ray/dbal-module",
     "keywords": [
-        "BEAR.Sunday module",
+        "Ray.Di module",
         "dbal"
     ],
-    "description": "doctrine/dbal module for BEAR.Sunday",
+    "description": "doctrine/dbal module for Ray.Di",
     "license": "BSD-3-Clause",
     "require": {
         "ray/di": "~2.0@dev",
