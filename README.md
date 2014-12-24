@@ -1,4 +1,5 @@
 # ray/dbal-module
+[![Build Status](https://travis-ci.org/Ray-Di/Ray.DbalModule.svg?branch=master)](https://travis-ci.org/Ray-Di/Ray.DbalModule)
 
 [Doctrine Dbal](https://github.com/doctrine/dbal) module for [Ray.Di](https://github.com/koriym/Ray.Di)
 
