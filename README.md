@@ -1,4 +1,5 @@
-# ray/dbal-module
+# Ray.DbalModule
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/?branch=develop)
 [![Build Status](https://travis-ci.org/Ray-Di/Ray.DbalModule.svg?branch=master)](https://travis-ci.org/Ray-Di/Ray.DbalModule)
 
 [Doctrine Dbal](https://github.com/doctrine/dbal) module for [Ray.Di](https://github.com/koriym/Ray.Di)
