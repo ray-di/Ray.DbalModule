@@ -25,9 +25,20 @@ class DbalProvider implements ProviderInterface
      */
     public function __construct($config)
     {
-        $parsedConfig = [];
-        parse_str($config, $parsedConfig);
-        $this->config = $parsedConfig;
+        if (is_array($config)) {
+            $this->config = $config;
+
+            return;
+        }
+        if (is_string($config)) {
+            $parsedConfig = [];
+            parse_str($config, $parsedConfig);
+            $this->config = $parsedConfig;
+
+            return;
+        }
+
+        throw new \InvalidArgumentException('@DbalConfig');
     }
 
     /**
