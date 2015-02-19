@@ -6,6 +6,8 @@
  */
 namespace Ray\DbalModule;
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use Ray\DbalModule\Annotation\DbalConfig;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;
 use Doctrine\DBAL\Driver\Connection;
@@ -30,7 +32,8 @@ class DbalModule extends AbstractModule
      */
     protected function configure()
     {
-        $this->bind()->annotatedWith('dbal_config')->toInstance($this->config);
+        AnnotationRegistry::registerFile(__DIR__ . '/DoctrineAnnotations.php');
+        $this->bind()->annotatedWith(DbalConfig::class)->toInstance($this->config);
         $this->bind(Connection::class)->toProvider(DbalProvider::class)->in(Scope::SINGLETON);
     }
 }

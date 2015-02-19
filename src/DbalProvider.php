@@ -6,6 +6,7 @@
  */
 namespace Ray\DbalModule;
 
+use Ray\DbalModule\Annotation\DbalConfig;
 use Ray\Di\Di\Named;
 use Ray\Di\ProviderInterface;
 use Doctrine\DBAL\DriverManager;
@@ -18,9 +19,9 @@ class DbalProvider implements ProviderInterface
     private $config;
 
     /**
-     * @param array $config
+     * @param string $config
      *
-     * @Named("dbal_config")
+     * @DbalConfig
      */
     public function __construct($config)
     {
