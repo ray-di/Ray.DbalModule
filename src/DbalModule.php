@@ -10,6 +10,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\DBAL\Driver\Connection;
 use Ray\DbalModule\Annotation\DbalConfig;
 use Ray\Di\AbstractModule;
+use Ray\Di\Name;
 use Ray\Di\Scope;
 
 class DbalModule extends AbstractModule
@@ -20,11 +21,18 @@ class DbalModule extends AbstractModule
     private $config;
 
     /**
-     * @param string $config
+     * @var string
      */
-    public function __construct($config)
+    private $qualifier;
+
+    /**
+     * @param AbstractModule $config
+     * @param string         $qualifier
+     */
+    public function __construct($config, $qualifier = Name::ANY)
     {
         $this->config = $config;
+        $this->qualifier = $qualifier;
     }
 
     /**
@@ -33,7 +41,7 @@ class DbalModule extends AbstractModule
     protected function configure()
     {
         AnnotationRegistry::registerFile(__DIR__ . '/DoctrineAnnotations.php');
-        $this->bind()->annotatedWith(DbalConfig::class)->toInstance($this->config);
-        $this->bind(Connection::class)->toProvider(DbalProvider::class)->in(Scope::SINGLETON);
+        $this->bind()->annotatedWith($this->qualifier)->annotatedWith(DbalConfig::class)->toInstance($this->config);
+        $this->bind(Connection::class)->annotatedWith($this->qualifier)->toProvider(DbalProvider::class, $this->qualifier)->in(Scope::SINGLETON);
     }
 }
