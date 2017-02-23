@@ -8,22 +8,44 @@ namespace Ray\DbalModule;
 
 use Doctrine\DBAL\DriverManager;
 use Ray\DbalModule\Annotation\DbalConfig;
+use Ray\Di\Di\PostConstruct;
+use Ray\Di\InjectorInterface;
 use Ray\Di\ProviderInterface;
+use Ray\Di\SetContextInterface;
 
-class DbalProvider implements ProviderInterface
+class DbalProvider implements ProviderInterface, SetContextInterface
 {
+    /**
+     * @var InjectorInterface
+     */
+    private $injector;
+
+    /**
+     * @var string
+     */
+    private $context;
+
     /**
      * @var array
      */
     private $config;
 
-    /**
-     * @param string $config
-     *
-     * @DbalConfig
-     */
-    public function __construct($config)
+    public function __construct(InjectorInterface $injector)
     {
+        $this->injector = $injector;
+    }
+
+    public function setContext($context)
+    {
+        $this->context = $context;
+    }
+
+    /**
+     * @PostConstruct
+     */
+    public function init()
+    {
+        $config = $this->injector->getInstance('', DbalConfig::class . $this->context);
         if (is_array($config)) {
             $this->config = $config;
 
@@ -39,6 +61,7 @@ class DbalProvider implements ProviderInterface
 
         throw new \InvalidArgumentException('@DbalConfig');
     }
+
 
     /**
      * {@inheritdoc}
