@@ -23,18 +23,38 @@ class AppModule extends AbstractModule
         $this->install(new DbalModule('driver=pdo_sqlite&memory=true');
     }
 }
-
 ```
-### DI trait
 
- * [DbalInject](https://github.com/BEARSunday/BEAR.DbalModule/blob/master/src/DbalInject.php) for `Doctrine\DBAL\Driver\Connection` interface
+### for named binding
+
+Set `qualifer` in 2nd parameter in DbalModule.
+
+```php
+$this->install(new DbalModule('driver=pdo_sqlite&memory=true', 'log_db');
+```
+
+Use qualifer in `@Inject`.
+
+```php
+/**
+ * @Inject
+ * @Named("log_db")
+ */
+public function setLogDb(Connection $logDb)
+{
+    $this->logDb = $logDb;
+}
+```
+## DI trait
+
+ * [DbalInject](https://github.com/BEARSunday/BEAR.DbalModule/blob/1.x/src/DbalInject.php) for `Doctrine\DBAL\Driver\Connection` interface
  
-### Demo
+## Demo
 
     $ php docs/demo/run.php
     // It works!
 
-### Requiuments
+## Requiuments
 
  * PHP 5.4+
  * hhvm
