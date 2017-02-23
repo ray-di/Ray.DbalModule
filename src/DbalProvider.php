@@ -6,9 +6,9 @@
  */
 namespace Ray\DbalModule;
 
+use Doctrine\DBAL\DriverManager;
 use Ray\DbalModule\Annotation\DbalConfig;
 use Ray\Di\ProviderInterface;
-use Doctrine\DBAL\DriverManager;
 
 class DbalProvider implements ProviderInterface
 {

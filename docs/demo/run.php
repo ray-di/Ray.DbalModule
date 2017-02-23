@@ -19,5 +19,4 @@ class Fake
 $fake = (new Injector(new DbalModule('driver=pdo_sqlite&memory=true')))->getInstance(Fake::class);
 $works = ($fake->foo() instanceof \Doctrine\DBAL\Driver\Connection);
 
-echo ($works ? 'It works!' : 'It DOES NOT work!') . PHP_EOL;
-
+echo($works ? 'It works!' : 'It DOES NOT work!') . PHP_EOL;
