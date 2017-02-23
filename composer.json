@@ -5,21 +5,25 @@
         "dbal"
     ],
     "description": "doctrine/dbal module for Ray.Di",
-    "license": "BSD-3-Clause",
+    "license": "MIT",
     "require": {
-        "ray/di": "~2.0@dev",
-        "doctrine/dbal": "~2.5"
+        "ray/di": "^2.5.0",
+        "doctrine/dbal": "^2.5.12"
     },
     "autoload": {
         "psr-4": {
             "Ray\\DbalModule\\": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "0.1.x-dev"
-        }
+    "scripts" : {
+        "test": [
+            "phpmd src text ./phpmd.xml",
+            "phpcs src tests",
+            "phpunit"
+        ],
+        "cs-fix": [
+            "php-cs-fixer fix --config-file=./.php_cs",
+            "phpcbf src"
+        ]
     }
 }

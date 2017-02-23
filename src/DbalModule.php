@@ -7,10 +7,10 @@
 namespace Ray\DbalModule;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\DBAL\Driver\Connection;
 use Ray\DbalModule\Annotation\DbalConfig;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;
-use Doctrine\DBAL\Driver\Connection;
 
 class DbalModule extends AbstractModule
 {
