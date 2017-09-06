@@ -1,8 +1,8 @@
 <?php
 /**
- * This file is part of the Ray.DbalModule package
+ * This file is part of the Ray.DbalModule package.
  *
- * @license http://opensource.org/licenses/bsd-license.php BSD
+ * @license http://opensource.org/licenses/MIT MIT
  */
 namespace Ray\DbalModule;
 
@@ -61,7 +61,6 @@ class DbalProvider implements ProviderInterface, SetContextInterface
 
         throw new \InvalidArgumentException('@DbalConfig');
     }
-
 
     /**
      * {@inheritdoc}
