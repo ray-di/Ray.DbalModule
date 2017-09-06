@@ -1,6 +1,8 @@
 # Ray.DbalModule
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/?branch=develop)
-[![Build Status](https://travis-ci.org/ray-di/Ray.DbalModule.svg)](https://travis-ci.org/Ray-Di/Ray.DbalModule)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/badges/quality-score.png?b=1.x)](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/?branch=1.x)
+[![Code Coverage](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/badges/coverage.png?b=1.x)](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/?branch=1.x)
+[![Build Status](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/badges/build.png?b=1.x)](https://scrutinizer-ci.com/g/Ray-Di/Ray.DbalModule/build-status/1.x)
+[![Build Status](https://travis-ci.org/ray-di/Ray.DbalModule.svg?branch=1.x)](https://travis-ci.org/ray-di/Ray.DbalModule)
 
 [Doctrine Dbal](https://github.com/doctrine/dbal) module for [Ray.Di](https://github.com/koriym/Ray.Di)
 
@@ -53,9 +55,4 @@ public function setLogDb(Connection $logDb)
 
     $ php docs/demo/run.php
     // It works!
-
-## Requiuments
-
- * PHP 5.4+
- * hhvm
  
